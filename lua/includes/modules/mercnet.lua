@@ -7,9 +7,7 @@ end
 
 net.Receive(ns, function()
     local nm = net.ReadString()
-    print(nm)
     if MercNet.Receives[nm] then
-        print("Shiiiet")
         MercNet.Receives[nm]()
     end
 end)
