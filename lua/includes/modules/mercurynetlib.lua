@@ -15,15 +15,17 @@ net.Receive(ns, function()
     end
 end)
 
-MercNet.Start = function(name, unr)
+module("MercNet", package.seeall)
+
+function MercNet.Start(name, unr)
     net.Start(ns, unr)
     net.WriteString(name)
 end
 
-MercNet.Receive = function(name, func)
+function MercNet.Receive(name, func)
     MercNet.Receives[name] = func
 end
 
-MercNet.RemoveReceive = function(name)
+function MercNet.RemoveReceive(name)
     MercNet.Receives[name] = nil
 end
