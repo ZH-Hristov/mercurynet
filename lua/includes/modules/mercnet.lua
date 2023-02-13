@@ -1,6 +1,5 @@
 local net = net
 local ns = "mrc_msg"
-MercNet = {Receives = {}}
 
 if SERVER then
     util.AddNetworkString("mrc_msg")
@@ -16,6 +15,8 @@ net.Receive(ns, function()
 end)
 
 module("MercNet", package.seeall)
+
+MercNet.Receives = {}
 
 function MercNet.Start(name, unr)
     net.Start(ns, unr)
